@@ -1,0 +1,124 @@
+.navbar-container {
+  background: #333333;
+  padding: 20px 80px;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 1;
+  .navbar-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .main-section {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      .title {
+        font-size: 30px;
+        font-weight: 500;
+        letter-spacing: 2px;
+        a {
+          color: #d50089;
+          text-decoration: none;
+        }
+      }
+      .pagetitle {
+        font-size: 18px;
+        font-weight: 500;
+        letter-spacing: 2px;
+        cursor: pointer;
+        text-decoration: none;
+        color: #d58f00;
+        position: relative;
+        padding: 5px 0;
+        &::before {
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          height: 2px;
+          background: #d50089;
+          transform: scaleX(0);
+        }
+        &:hover::before {
+          transform: scaleX(1);
+        }
+      }
+      a::before,
+      a::after {
+        content: "";
+        position: absolute;
+        transition: transform 0.5s ease;
+      }
+    }
+    .sub-main-section {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+
+      .pagetitle {
+        font-size: 18px;
+        font-weight: 500;
+        letter-spacing: 2px;
+        cursor: pointer;
+        text-decoration: none;
+        color: #d58f00;
+        position: relative;
+        padding: 5px 0;
+        &::before {
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          height: 2px;
+          background: #d50089;
+          transform: scaleX(0);
+        }
+        &:hover::before {
+          transform: scaleX(1);
+        }
+      }
+      a::before,
+      a::after {
+        content: "";
+        position: absolute;
+        transition: transform 0.5s ease;
+      }
+
+      .total-cart {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        gap: 5px;
+        .cart-icon {
+          background-image: url("../assets/images/basket-cart.png");
+          width: 15px;
+          height: 15px;
+          background-repeat: no-repeat;
+          background-size: contain;
+        }
+        .total-items {
+          background: #d50089;
+          padding: 5px 8px;
+          border-radius: 50%;
+          color: #ffffff;
+          font-size: 12px;
+          text-decoration: none;
+          position: absolute;
+          top: -11px;
+          right: -15px;
+        }
+      }
+      .navbar {
+        &.wishlist {
+          color: #d58f00;
+        }
+      }
+      .signup {
+        color: #d58f00;
+      }
+    }
+  }
+}
