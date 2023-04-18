@@ -1,5 +1,26 @@
 import React from "react";
-
+import "./about-us.scss";
+import profile from "../assets/images/photographs.jpeg";
 export default function aboutus() {
-  return <div>About US</div>;
+  return (
+    <div className="about-me">
+      <section className="left-section">
+        <div className="outer-part"></div>
+        <img src={profile} alt="profile" className="profile" />
+      </section>
+      <section className="right-section">
+        <div className="name">Paras Puru</div>
+        <div className="designation">Senior Software Engineer</div>
+        <div className="details">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.
+        </div>
+      </section>
+    </div>
+  );
 }

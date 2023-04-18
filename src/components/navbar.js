@@ -5,6 +5,7 @@ import "./navbar.scss";
 
 const Navbar = () => {
   const { data } = useSelector((state) => state.cart);
+  const { wishlistData } = useSelector((state) => state.wishlist);
   return (
     <div className="navbar-container">
       <div className="navbar-section">
@@ -26,9 +27,14 @@ const Navbar = () => {
           <Link to="/about-us" className="pagetitle about">
             About Us
           </Link>
-          <Link to="/wishlist" className="navbar wishlist">
+          <div className="pagetitle total-wishlist">
             <i className="fa fa-heart" />
-          </Link>
+            <Link to="/wishlist" className="navbar wishlist">
+              {wishlistData && wishlistData.length > 0
+                ? wishlistData.length
+                : 0}
+            </Link>
+          </div>
           <div className="pagetitle total-cart">
             <span className="fas fa-shopping-cart"></span>
             <Link to="/cart" className="total-items">

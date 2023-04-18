@@ -53,13 +53,9 @@ const Cart = () => {
       <div
         className={`cart cart-container ${
           data && data.length === 1 ? "single-cart" : ""
-        }`}
+        } ${data && data.length <= 0 ? "empty-cart" : ""}`}
       >
-        <div
-          className={`products-section ${
-            data && data.length <= 0 ? "empty-cart" : ""
-          }`}
-        >
+        <div className={`products-section`}>
           {data && data.length > 0 ? (
             data.map((product) => (
               <div className="card" key={product.id}>

@@ -85,7 +85,24 @@
         position: absolute;
         transition: transform 0.5s ease;
       }
-
+      .total-wishlist {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        gap: 5px;
+        .wishlist {
+          background: #d50089;
+          padding: 5px 8px;
+          border-radius: 50%;
+          color: #ffffff;
+          font-size: 12px;
+          text-decoration: none;
+          position: absolute;
+          top: -11px;
+          right: -15px;
+        }
+      }
       .total-cart {
         display: flex;
         align-items: center;
@@ -111,11 +128,11 @@
           right: -15px;
         }
       }
-      .navbar {
-        &.wishlist {
-          color: #d58f00;
-        }
-      }
+      // .navbar {
+      //   &.wishlist {
+      //     color: #d58f00;
+      //   }
+      // }
       .signup {
         color: #d58f00;
       }

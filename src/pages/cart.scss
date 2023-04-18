@@ -165,37 +165,6 @@
             border-bottom: none;
           }
         }
-        &.empty-cart {
-          left: 50%;
-          position: relative;
-          top: 50%;
-          transform: translate(-50%, 0);
-          padding: 30px 60px;
-          box-shadow: 0 0 0 0;
-          .empty-cart-wrapper {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            position: relative;
-            .empty-cart {
-              color: #333333;
-              font-size: 20px;
-              font-weight: 500;
-              margin: 20px 0 70px;
-            }
-            .link {
-              border: none;
-              padding: 10px 30px;
-              border-radius: 20px;
-              color: #d58f00;
-              text-decoration: none;
-              background: #333333;
-              font-size: 16px;
-              font-weight: 500;
-            }
-          }
-        }
       }
       .checkout-section {
         padding: 16px;
@@ -295,6 +264,45 @@
               bottom: 0;
             }
           }
+        }
+      }
+    }
+    &.empty-cart {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 30px 60px;
+      box-shadow: 0 0 0 0;
+      .products-section {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        box-shadow: inherit;
+        border-radius: 20px;
+        width: auto;
+        padding: 30px;
+      }
+      .empty-cart-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        position: relative;
+        .empty-cart {
+          color: #333333;
+          font-size: 20px;
+          font-weight: 500;
+          margin: 20px 0 70px;
+        }
+        .link {
+          border: none;
+          padding: 10px 30px;
+          border-radius: 20px;
+          color: #d58f00;
+          text-decoration: none;
+          background: #333333;
+          font-size: 16px;
+          font-weight: 500;
         }
       }
     }
