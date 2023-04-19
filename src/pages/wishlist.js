@@ -6,6 +6,7 @@ import { ToastMessageData } from "../constant/constant";
 import WishlistDeleteModal from "../components/modals/wishlist-delete-modal";
 import { removeFromWishList } from "../store/reducers/wishlistSlice";
 import "./wishlist.scss";
+import { Link } from "react-router-dom";
 const Wishlist = () => {
   const dispatch = useDispatch();
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -40,44 +41,55 @@ const Wishlist = () => {
         <i className="fa fa-heart my-wishlist"></i>
         <div className="title">My Wishlist</div>
       </div>
-      <div className="wishlist-products">
-        <div className="wishlist-table">
-          <div className="product">Product</div>
-          <div className="title">Title</div>
-          <div className="price">Price</div>
-          <div className="add-to-cart">Add to Cart</div>
-          <div className="remove">Remove</div>
+      {wishlistData && wishlistData.length > 0 ? (
+        <div className="wishlist-products">
+          <div className="wishlist-table">
+            <div className="product">Product</div>
+            <div className="title">Title</div>
+            <div className="price">Price</div>
+            <div className="add-to-cart">Add to Cart</div>
+            <div className="remove">Remove</div>
+          </div>
+          <div className="products-wrapper">
+            {wishlistData &&
+              wishlistData.length > 0 &&
+              wishlistData.map((product) => (
+                <div className="products">
+                  <div className="image">
+                    <img
+                      src={product.image}
+                      className="product-image"
+                      alt="product-icon"
+                    />
+                  </div>
+                  <div className="title">{product.title}</div>
+                  <div className="price">₹{product.price}</div>
+                  <div
+                    className="add-to-cart"
+                    onClick={() => handleAddToCart(product)}
+                  >
+                    <div className="btn">Add to cart</div>
+                  </div>
+                  <div
+                    className="remove"
+                    onClick={() => handleRemoveFromWishlist(product)}
+                  >
+                    <i className="fa fa-trash wishlist" />
+                  </div>
+                </div>
+              ))}
+          </div>
         </div>
-        <div className="products-wrapper">
-          {wishlistData &&
-            wishlistData.length > 0 &&
-            wishlistData.map((product) => (
-              <div className="products">
-                <div className="image">
-                  <img
-                    src={product.image}
-                    className="product-image"
-                    alt="product-icon"
-                  />
-                </div>
-                <div className="title">{product.title}</div>
-                <div className="price">₹{product.price}</div>
-                <div
-                  className="add-to-cart"
-                  onClick={() => handleAddToCart(product)}
-                >
-                  <div className="btn">Add to cart</div>
-                </div>
-                <div
-                  className="remove"
-                  onClick={() => handleRemoveFromWishlist(product)}
-                >
-                  <i className="fa fa-trash wishlist" />
-                </div>
-              </div>
-            ))}
+      ) : (
+        <div className="empty-wishlist">
+          <div className="message">
+            Ooooops.. There is no product in wishlist
+          </div>
+          <div className="continue-shopping">
+            <Link to="/">Continue Shopping</Link>
+          </div>
         </div>
-      </div>
+      )}
       {isModalOpen ? (
         <WishlistDeleteModal
           onHandleCancel={handleCancelModal}

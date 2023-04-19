@@ -107,4 +107,30 @@
       }
     }
   }
+  .empty-wishlist {
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    .message {
+      font-size: 25px;
+      font-weight: 700;
+      color: #141414;
+      padding-bottom: 25px;
+    }
+    .continue-shopping {
+      a {
+        font-size: 20px;
+        font-weight: 500;
+        color: #ffffff;
+        text-decoration: none;
+        background: #ef0081;
+        padding: 10px 20px;
+        border-radius: 20px;
+        border: none;
+        cursor: pointer;
+      }
+    }
+  }
 }
