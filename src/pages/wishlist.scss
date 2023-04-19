@@ -20,7 +20,7 @@
     }
   }
   .wishlist-products {
-    width: 100%;
+    width: 1100px;
     margin-top: 40px;
     .wishlist-table {
       width: 100%;
@@ -37,10 +37,10 @@
       }
     }
     .products-wrapper {
-      letter-spacing: 2px;
       font-size: 20px;
       font-weight: 500;
       padding: 0px 0 50px;
+      width: 100%;
       .products {
         letter-spacing: 2px;
         font-size: 20px;
@@ -50,13 +50,19 @@
         align-items: center;
         justify-content: center;
         border-bottom: 1px solid #e0e0e0;
-        gap: 105px;
+        width: 100%;
         &:last-child {
           border-bottom: none;
         }
+        div {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 220px;
+        }
         .product-image {
-          width: 140px;
-          height: 170px;
+          width: 80px;
+          height: 100px;
           border-radius: 20px;
           border: 1px solid #e0e0e0;
           padding: 10px;

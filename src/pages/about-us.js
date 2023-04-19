@@ -10,7 +10,7 @@ export default function aboutus() {
       </section>
       <section className="right-section">
         <div className="name">Paras Puru</div>
-        <div className="designation">Senior Software Engineer</div>
+        <div className="designation">Shopping Kart Pvt Ltd</div>
         <div className="details">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad

@@ -1,7 +1,7 @@
 import React from "react";
 import Modal from "../global/modal";
-import "./product-delete-modal.scss";
-const ProductDeleteModal = (props) => {
+import "./wishlist-delete-modal.scss";
+const WishlistDeleteModal = (props) => {
   const handleDeleteOnNo = () => {
     props.onHandleCancel();
   };
@@ -10,9 +10,9 @@ const ProductDeleteModal = (props) => {
   };
   return (
     <Modal onHandleCancel={handleDeleteOnNo}>
-      <div className="product-delete-wrapper">
-        <div className="product-header">
-          <div>Are you sure? You want to delete from cart..</div>
+      <div className="wishlist-delete-wrapper">
+        <div className="wishlist-header">
+          <div>Are you sure? You want to delete from wishlist..</div>
         </div>
         <div className="product-body">
           <div className="product-icon">
@@ -52,4 +52,4 @@ const ProductDeleteModal = (props) => {
   );
 };
 
-export default ProductDeleteModal;
+export default WishlistDeleteModal;
