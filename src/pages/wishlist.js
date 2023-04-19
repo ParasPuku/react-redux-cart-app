@@ -4,7 +4,7 @@ import { addToCart } from "../store/reducers/cartSlice";
 import { showToast } from "../store/reducers/toastSlice";
 import { ToastMessageData } from "../constant/constant";
 import WishlistDeleteModal from "../components/modals/wishlist-delete-modal";
-import { removeCart } from "../store/reducers/cartSlice";
+import { removeFromWishList } from "../store/reducers/wishlistSlice";
 import "./wishlist.scss";
 const Wishlist = () => {
   const dispatch = useDispatch();
@@ -30,7 +30,7 @@ const Wishlist = () => {
     setIsModalOpen(false);
   };
   const onHandleDeleteProduct = (id) => {
-    dispatch(removeCart(id));
+    dispatch(removeFromWishList(id));
     setIsModalOpen(false);
     setCurrentProduct({});
   };
