@@ -1,11 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import "./navbar.scss";
 
 const Navbar = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const { data } = useSelector((state) => state.cart);
   const { wishlistData } = useSelector((state) => state.wishlist);
+  const handleUserAuthentication = () => {
+    console.log("Called");
+    setIsLoggedIn(!isLoggedIn);
+  };
   return (
     <div className="navbar-container">
       <div className="navbar-section">
@@ -41,9 +46,26 @@ const Navbar = () => {
               {data && data.length > 0 ? data.length : 0}
             </Link>
           </div>
-          <Link to="/singup" className="signup">
-            <i className="fa fa-user"></i>
+          <Link className="signup">
+            <i className="fa fa-user" onClick={handleUserAuthentication}></i>
           </Link>
+          {isLoggedIn ? (
+            <div className="login">
+              <div className="login-btn">
+                <Link to="/login">Login</Link>
+              </div>
+            </div>
+          ) : (
+            <div className="signout">
+              <div className="user-name">Hey! Paras</div>
+              <div className="my-profile">
+                <Link to="/profile">My Profile</Link>
+              </div>
+              <div className="signout-btn">
+                <Link to="/login">Sign Out</Link>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>

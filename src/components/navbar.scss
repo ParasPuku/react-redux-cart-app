@@ -136,6 +136,43 @@
       .signup {
         color: #d58f00;
       }
+      .signout {
+        position: absolute;
+        right: 75px;
+        top: 60px;
+        background: #b98c00;
+        padding: 10px 20px;
+        border-radius: 10px;
+        .my-profile {
+          margin: 10px 0;
+          a {
+            color: #000000;
+            text-decoration: none;
+          }
+        }
+        .signout-btn {
+          margin: 10px 0;
+          a {
+            color: #000000;
+            text-decoration: none;
+          }
+        }
+      }
+      .login {
+        position: absolute;
+        right: 75px;
+        top: 60px;
+        background: #b98c00;
+        padding: 10px 20px;
+        border-radius: 10px;
+        .login-btn {
+          margin: 10px 0;
+          a {
+            color: #000000;
+            text-decoration: none;
+          }
+        }
+      }
     }
   }
 }
